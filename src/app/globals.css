@@ -1,0 +1,138 @@
+:root {
+  --primary-color: #0f4c3a; /* Deep Green */
+  --primary-light: #16684f;
+  --primary-dark: #092e23;
+  --secondary-color: #d4af37; /* Gold */
+  --secondary-light: #e6c865;
+  --background-light: #fdfbf7; /* Off-white warm background */
+  --background-white: #ffffff;
+  --text-main: #1a1a1a;
+  --text-muted: #4a5568;
+  --text-light: #ffffff;
+  
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100vh;
+}
+
+body {
+  font-family: var(--font-outfit), sans-serif;
+  background-color: var(--background-light);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* Urdu specific typography */
+[lang="ur"] body {
+  font-family: var(--font-nastaliq), serif;
+  line-height: 2.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-light);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: var(--text-main);
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-light);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 10px 22px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--secondary-color);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
